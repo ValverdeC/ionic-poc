@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Connexion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item *ngIf="isRegister">
+    <ion-label floating>Prénom</ion-label>
+    <ion-input type="text" [(ngModel)]="user.firstname"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="isRegister">
+    <ion-label floating>Nom</ion-label>
+    <ion-input type="text" [(ngModel)]="user.lastname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Mot de passe</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="onLoginOrRegister(user)">Login</button>
+  <button ion-button color="light" clear (click)="onNewUserClick()">Pas encore de compte ?</button>
+</ion-content>
